@@ -194,7 +194,7 @@ public class FileManager implements APIObject {
 	 */
 	public FileManager() {
 		preferences = Preferences.userNodeForPackage(getClass());
-		boolean isNew = preferences.getBoolean(IS_NEW_VERSION, false);
+		boolean isNew = preferences.getBoolean(IS_NEW_VERSION, true);
 		if(!isNew) {
 			Preferences old = Preferences.userRoot();
 			preferences.putByteArray(PROFILES_FOR_BACKUP_KEY, old.getByteArray(PROFILES_FOR_BACKUP_KEY_OLD, null));
